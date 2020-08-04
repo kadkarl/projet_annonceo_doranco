@@ -2,8 +2,16 @@
 
 namespace Sys;
 
+/**
+ * Constants Class
+ */
 class Constants
 {
+    /**
+     * Init Constants
+     *
+     * @return void
+     */
     public static function init()
     {
         define("SERVER",$_SERVER);

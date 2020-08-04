@@ -12,8 +12,16 @@ use Sys\AbstractController;
 use Sys\Router;
 use Sys\Session;
 
+/**
+ * Annonce Class
+ */
 class AnnonceController extends AbstractController
 {
+    /**
+     * Creer Annonce
+     *
+     * @return void
+     */
     public function create()
     {
         if(Router::$request_method === "POST")
@@ -47,6 +55,12 @@ class AnnonceController extends AbstractController
         ]);
     }
 
+    /**
+     * Detail Annonce
+     *
+     * @param integer $id
+     * @return void
+     */
     public static function detail(int $id)
     {
         if (!$id || !$annonce = AnnonceModel::detail($id))
@@ -62,6 +76,12 @@ class AnnonceController extends AbstractController
 
     }
 
+    /**
+     * Delete Annonce
+     *
+     * @param integer $id
+     * @return void
+     */
     public static function delete(int $id)
     {
         if (!$id || !AnnonceModel::delete($id)) 

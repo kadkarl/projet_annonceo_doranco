@@ -4,14 +4,41 @@ namespace Sys;
 
 use App\Controllers\ErrorController;
 
+/**
+ * Class Router
+ */
 class Router
 {
+    /**
+     * @var [string]
+     */
     private static $url;
+
+    /**
+     * @var [string]
+     */
     private static $controller;
+
+    /**
+     * @var [string]
+     */
     private static $method;
+
+    /**
+     * @var [string]
+     */
     private static $params;
+
+    /**
+     * @var [string]
+     */
     public static $request_method;
 
+    /**
+     * Init Router
+     *
+     * @return void
+     */
     public static function init()
     {
         self::$url = rtrim(self::$url,"/");
@@ -20,6 +47,11 @@ class Router
         self::dispatch_url();
     }
 
+    /**
+     * Dispatcher
+     *
+     * @return void
+     */
     private static function dispatch_url()
     {
         if(isset(self::$url[0])) {
@@ -43,6 +75,11 @@ class Router
         self::call_controller_and_method();
     }
 
+    /**
+     * Init Controller And Methods 
+     *
+     * @return void
+     */
     private static function call_controller_and_method()
     {
         $path_file_controller = CONTROLLERS_PATH.self::$controller.".php";

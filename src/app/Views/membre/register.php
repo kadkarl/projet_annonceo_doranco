@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <input type="password" name="password" minlength="6" placeholder="Mot de passe" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-success">S'inscrire</button>
+                <button type="submit" class="btn btn-success"><i class="fa fa-user-circle-o" aria-hidden="true"></i> S'inscrire</button>
             </form>
             <a href="<?= SITE_URL ?>/membre/login">Déja membre ? se connecter ici</a>
         </div>

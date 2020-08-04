@@ -2,8 +2,17 @@
 
 namespace Sys;
 
+/**
+ * View Class
+ */
 class Views
 {
+    /**
+     * Constructor
+     *
+     * @param string $view
+     * @param array $data
+     */
     public function __construct(string $view, array $data = null)
     {
         $path_view = VIEWS_PATH.$view.".php";

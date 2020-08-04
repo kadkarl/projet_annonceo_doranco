@@ -22,15 +22,16 @@
                  <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
                          <?php if ($membreSession) : ?>
-                             <div class="btn-group dropdown">
-                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     <i class="fa fa-user" aria-hidden="true"></i> Bienvenue, <?= $membreSession->getPseudo() ?><span class="sr-only">(current)</span>
-                                 </button>
-                                 <div class="dropdown-menu">
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Quitter</a>
-                                 </div>
-                             </div>
+                            <div class="btn-group dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i> Bienvenue, <?= $membreSession->getPseudo() ?><span class="sr-only">(current)</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="<?= SITE_URL.'/app/dashboard' ?>"><i class="fa fa-home" aria-hidden="true"></i> Mes annonces</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<?= SITE_URL.'/membre/logout' ?>"><i class="fa fa-power-off" aria-hidden="true"></i> Quitter</a>
+                                </div>
+                            </div>
                          <?php else : ?>
                              <a class="nav-link text-white btn btn-secondary" href="<?= SITE_URL ?>/membre/login">
                                  <i class="fa fa-user" aria-hidden="true"></i> Membre <span class="sr-only">(current)</span>

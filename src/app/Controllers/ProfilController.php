@@ -15,8 +15,16 @@ use Sys\Session;
  */
 class ProfilController extends AbstractController
 {
+    /**
+     * @var [string]
+     */
     private static $error;
 
+    /**
+     * Creer Profil
+     *
+     * @return void
+     */
     public function create()
     {
         if(Router::$request_method === "POST")

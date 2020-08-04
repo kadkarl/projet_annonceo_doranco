@@ -61,6 +61,12 @@ class MembreModel extends AbstractModel
        
     }
 
+    /**
+     * Login
+     *
+     * @param Membre $membre
+     * @return boolean
+     */
     public static function login(Membre $membre): bool
     {
         if($dbMembre = self::getMembre($membre))
@@ -68,9 +74,14 @@ class MembreModel extends AbstractModel
             $hashMdp = $dbMembre->getMdp();
             return password_verify($membre->getMdp(), $hashMdp);
         }
-
     }
 
+    /**
+     * Get Membre
+     *
+     * @param Membre $membre
+     * @return void
+     */
     public static function getMembre(Membre $membre)
     {
         $email = $membre->getEmail();

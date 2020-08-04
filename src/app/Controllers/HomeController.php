@@ -15,6 +15,11 @@ use Sys\Router;
  */
 class HomeController extends AbstractController
 {
+    /**
+     * Home Page
+     *
+     * @return void
+     */
     public function index()
     {
         return self::render("index", [
@@ -24,6 +29,11 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * Search Annonce
+     *
+     * @return void
+     */
     public function search()
     {
         if(Router::$request_method === "POST")

@@ -12,6 +12,11 @@ use Sys\AbstractController;
 class ErrorController extends AbstractController
 {
 
+    /**
+     * Error 404
+     *
+     * @return void
+     */
     public static function show404()
     {
         header("HTTP/1.0 404 Not Found");

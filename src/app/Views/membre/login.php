@@ -14,12 +14,12 @@
                 </div>
                 <?php endif; ?>
                 <div class="form-group">
-                    <input type="text" name="email" placeholder="Email" class="form-control" required>
+                    <input type="email" name="email" placeholder="Email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" placeholder="Mot de passe" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-success">Se connecter</button>
+                <button type="submit" class="btn btn-success"><i class="fa fa-lock" aria-hidden="true"></i> Se connecter</button>
             </form>
             <a href="<?= SITE_URL ?>/membre/register">Pas encore membre ? créer un compte ici</a>
         </div>

@@ -12,9 +12,17 @@ use Sys\Session;
 
 class MembreController extends AbstractController
 {
-
+    /**
+     *
+     * @var [string]
+     */
     private static $error;
 
+    /**
+     * Register
+     *
+     * @return void
+     */
     public function register()
     {
         if(Session::get("membreSession")) return self::redirectToRoute(SITE_URL . "/app/dashboard");
@@ -48,10 +56,10 @@ class MembreController extends AbstractController
 
                 if(ProfilModel::checkProfil($membre->getId_membre()) === 0)
                 {
-                    return self::redirectToRoute("/profil/create");
+                    return self::redirectToRoute(SITE_URL."/profil/create");
                 }
 
-                return self::redirectToRoute(SITE_URL . "/app/dashboard");
+                return self::redirectToRoute(SITE_URL."/app/dashboard");
             }           
         }
 
@@ -61,9 +69,14 @@ class MembreController extends AbstractController
         ]);
     }
 
+    /**
+     * Login
+     *
+     * @return void
+     */
     public function login()
     {
-        if (Session::get("membreSession")) return self::redirectToRoute(SITE_URL . "/app/dashboard");
+        if (Session::get("membreSession")) return self::redirectToRoute(SITE_URL."/app/dashboard");
 
         if (Router::$request_method === "POST")
         {
@@ -83,7 +96,7 @@ class MembreController extends AbstractController
                     return self::redirectToRoute(SITE_URL."/profil/create");
                 }
 
-                return self::redirectToRoute(SITE_URL . "/app/dashboard");
+                return self::redirectToRoute(SITE_URL."/app/dashboard");
             }
         }
 
@@ -93,8 +106,24 @@ class MembreController extends AbstractController
         ]);
     }
 
+    /**
+     * Reset Password
+     *
+     * @return void
+     */
     public function resetPassword()
     {
 
+    }
+
+    /**
+     * Logout
+     *
+     * @return void
+     */
+    public function logout()
+    {
+        Session::clear();
+        self::redirectToRoute(SITE_URL);
     }
 }

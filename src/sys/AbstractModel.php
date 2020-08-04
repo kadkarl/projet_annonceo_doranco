@@ -6,14 +6,22 @@ use PDO;
 
 /**
  * Pattern Singleton
- * Class AbstractModel
+ * Class Abstract Model
  * @package Sys
  */
 
 class AbstractModel
 {
+    /**
+     * @var [string]
+     */
     public static  $db;
 
+    /**
+     * Init PDO
+     *
+     * @return void
+     */
     public static function init()
     {
         if(self::$db === null)

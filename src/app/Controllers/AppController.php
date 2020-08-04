@@ -6,8 +6,16 @@ use App\Models\AnnonceModel;
 use Sys\AbstractController;
 use Sys\Session;
 
+/**
+ * App Class
+ */
 class AppController extends AbstractController
 {
+    /**
+     * Dashboard
+     *
+     * @return void
+     */
     public function dashboard()
     {
         if(!Session::get("membreSession"))
