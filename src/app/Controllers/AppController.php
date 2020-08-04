@@ -12,7 +12,7 @@ class AppController extends AbstractController
     {
         return self::render('app/dashboard', [
             "title_page" => "Tableau de bord",
-            "annonces" => AnnonceModel::AllParMembre()
+            "mesannonces" => AnnonceModel::allParMembre()
         ]);
-    }
+    }    
 }

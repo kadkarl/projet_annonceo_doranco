@@ -15,6 +15,11 @@ class ProfilModel extends \Sys\AbstractModel
         return self::init()->query("select * from profil where id_membre = '$id_membre'")->rowCount();
     }
 
+    public static function getProfil(int $id_membre): Profil
+    {
+        return self::init()->query("select * from profil where id_membre = '$id_membre'")->fetchObject("App\Entities\Profil");
+    }
+
     public static function insert(Profil $profil)
     {
         $query = self::init()->prepare("insert into profil (id_membre,civilite,nom,prenom,telephone) values (:id_membre,:civilite,:nom,:prenom,:telephone)");

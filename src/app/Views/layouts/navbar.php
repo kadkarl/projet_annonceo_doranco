@@ -1,4 +1,6 @@
-     <?php use Sys\Session; ?>
+     <?php
+
+        use Sys\Session; ?>
      <?php $membreSession = Session::get("membreSession") ?>
 
      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -14,9 +16,9 @@
                          <a class="nav-link text-white" href="<?= SITE_URL ?>"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                      </li>
                      <?php if (!$membreSession) : ?>
-                     <li class="nav-item active">
-                         <a class="nav-link text-white" href="<?= SITE_URL ?>/membre/register"><i class="fa fa-pencil" aria-hidden="true"></i> Déposer un annonce <span class="sr-only">(current)</span></a>
-                     </li>
+                         <li class="nav-item active">
+                             <a class="nav-link text-white" href="<?= SITE_URL ?>/membre/register"><i class="fa fa-pencil" aria-hidden="true"></i> Déposer un annonce <span class="sr-only">(current)</span></a>
+                         </li>
                      <?php endif; ?>
                  </ul>
                  <ul class="navbar-nav ml-auto">

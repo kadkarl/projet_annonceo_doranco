@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-12">
-                <h1>Error 404 !</h1>
+                <h3>Error 404 !</h3>
             </div>
         </div>
     </div>

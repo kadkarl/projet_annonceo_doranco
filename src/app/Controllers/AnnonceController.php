@@ -5,7 +5,9 @@ namespace App\Controllers;
 use App\Entities\Annonce;
 use App\Models\AnnonceModel;
 use App\Models\CategorieModel;
+use App\Models\ProfilModel;
 use DateTime;
+use Error;
 use Sys\AbstractController;
 use Sys\Router;
 use Sys\Session;
@@ -32,11 +34,9 @@ class AnnonceController extends AbstractController
             $annonce->setDate_enregistrement(new DateTime());
             $annonce->setDate_enregistrement(date_format($annonce->getDate_enregistrement(), 'd-m-Y'));
 
-            return var_dump(AnnonceModel::insert($annonce));
-
             if(AnnonceModel::insert($annonce))
             {
-                self::redirectToRoute(SITE_URL."app/dashboard");
+                self::redirectToRoute(SITE_URL."/app/dashboard");
             }
 
         }
@@ -45,5 +45,34 @@ class AnnonceController extends AbstractController
             "title_page" => "Création annonce",
             "categories" => CategorieModel::all()
         ]);
+    }
+
+    public static function detail(int $id)
+    {
+        if (!$id || !$annonce = AnnonceModel::detail($id))
+        {
+            ErrorController::show404();
+        }
+
+        return self::render('annonce/detail', [
+            "title_page" => "Détail annonce",
+            "annonce" => $annonce,
+            "profil" =>  ProfilModel::getProfil($annonce->getMembre_id())
+        ]);
+
+    }
+
+    public static function delete(int $id)
+    {
+        if (!$id || !AnnonceModel::delete($id)) 
+        {
+            ErrorController::show404();
+        }
+
+        if(AnnonceModel::delete($id))
+        {
+            self::redirectToRoute(SITE_URL."/app/dashboard");
+        }
+
     }
 }

@@ -12,26 +12,39 @@
     <div class="row my-3">
         <div class="col-12">
 
-            <?php if (!$annonces) : ?>
+            <?php if (!$mesannonces) : ?>
 
                 <h3 class="text-center">Tu n'as pas d'annonce !</h3>
 
             <?php else : ?>
 
-                <table class="table table-striped table-inverse table-responsive">
-                    <thead class="thead-inverse">
+                <table class="table table-striped">
+                    <thead>
                         <tr>
+                            <th>Image</th>
                             <th>Titre</th>
                             <th>Prix</th>
-                            <th>Date création</th>
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($annonces as $a) : ?>
+                        <?php foreach ($mesannonces as $a) : ?>
                             <tr>
-                                <td><?= $a->titre ?></td>
-                                <td><?= $a->prix ?></td>
-                                <td><?= $a->date_creation ?></td>
+                                <td><img src="<?= SITE_URL ?>/public/assets/img/annonce_defaut.png" style="max-width: 50px" class="img-fluid"></td>
+                                <td><?= $a->getTitre() ?></td>
+                                <td><?= $a->getPrix() ?></td>
+                                <td><?= $a->getDate_enregistrement() ?></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="<?= SITE_URL ?>/annonce/detail/<?= $a->getId_annonce() ?>" class="btn btn-info">
+                                            <i class=" fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="<?= SITE_URL ?>/annonce/delete/<?= $a->getId_annonce() ?>" class="btn btn-danger" onclick="return confirm('Supprimer cette annonce ?')">
+                                            <i class=" fa fa-trash-o" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
