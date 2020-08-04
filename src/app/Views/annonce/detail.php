@@ -28,3 +28,5 @@
         </div>
     </div>
 </div>
+
+<?php require_once VIEWS_PATH . "layouts/footer.php"; ?>

@@ -15,8 +15,8 @@
                     <label>Catégorie</label>
                     <select name="id_categorie" class="form-control">
                         <option value="">Catégorie...</option>
-                        <?php foreach($categories as $cat): ?>
-                        <option value="<?= $cat->id_categorie ?>"><?= $cat->titre ?></option>
+                        <?php foreach ($categories as $cat) : ?>
+                            <option value="<?= $cat->id_categorie ?>"><?= $cat->titre ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -62,3 +62,5 @@
         </div>
     </div>
 </div>
+
+<?php require_once VIEWS_PATH . "layouts/footer.php"; ?>
