@@ -20,7 +20,7 @@ class AbstractModel
     /**
      * Init PDO
      *
-     * @return void
+     * @return mixed
      */
     public static function init()
     {
