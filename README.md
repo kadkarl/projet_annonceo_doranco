@@ -1,4 +1,4 @@
-# projet PHP annonceo doranco
+# Projet PHP annonceo doranco
 
 Etape 1
 composer install
