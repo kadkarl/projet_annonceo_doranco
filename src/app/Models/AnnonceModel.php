@@ -18,11 +18,12 @@ class AnnonceModel extends AbstractModel
 
     public static function allParMembre()
     {
-        $membre_id = Session::get("membreSession")->getId_membre();
-
-        return self::init()
-            ->query("select * from annonce where membre_id = '$membre_id'")
-            ->fetchAll(PDO::FETCH_CLASS, 'App\Entities\Annonce');
+       if( $membre_id = Session::get("membreSession")->getId_membre())
+       {
+            return self::init()
+                ->query("select * from annonce where membre_id = '$membre_id'")
+                ->fetchAll(PDO::FETCH_CLASS, 'App\Entities\Annonce');
+       }
     }
 
     public static function insert(Annonce $annonce)

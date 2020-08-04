@@ -1,6 +1,4 @@
-     <?php
-
-        use Sys\Session; ?>
+     <?php use Sys\Session; ?>
      <?php $membreSession = Session::get("membreSession") ?>
 
      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -24,11 +22,17 @@
                  <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
                          <?php if ($membreSession) : ?>
-                             <a class="nav-link text-white" href="<?= SITE_URL ?>/membre/login">
-                                 <i class="fa fa-user" aria-hidden="true"></i> Bienvenue, <?= $membreSession->getPseudo() ?><span class="sr-only">(current)</span>
-                             </a>
+                             <div class="btn-group dropdown">
+                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     <i class="fa fa-user" aria-hidden="true"></i> Bienvenue, <?= $membreSession->getPseudo() ?><span class="sr-only">(current)</span>
+                                 </button>
+                                 <div class="dropdown-menu">
+                                     <div class="dropdown-divider"></div>
+                                     <a class="dropdown-item" href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Quitter</a>
+                                 </div>
+                             </div>
                          <?php else : ?>
-                             <a class="nav-link text-white" href="<?= SITE_URL ?>/membre/login">
+                             <a class="nav-link text-white btn btn-secondary" href="<?= SITE_URL ?>/membre/login">
                                  <i class="fa fa-user" aria-hidden="true"></i> Membre <span class="sr-only">(current)</span>
                              </a>
                          <?php endif; ?>

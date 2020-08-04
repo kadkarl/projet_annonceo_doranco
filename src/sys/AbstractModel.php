@@ -16,10 +16,10 @@ class AbstractModel
 
     public static function init()
     {
-        $db_config = require_once ROOT_PATH."Database.php";
-
-        if(self::$db == null)
+        if(self::$db === null)
         {
+            $db_config = require_once ROOT_PATH."Database.php";
+
             try {
                 self::$db = new PDO($db_config['dsn'],$db_config['user'],$db_config['password']);
             }catch (\Exception $ex)
