@@ -70,7 +70,7 @@ class AnnonceModel extends AbstractModel
      * Detail Annonce
      *
      * @param integer $id
-     * @return void
+     * @return mixed
      */
     public static function detail(int $id)
     {

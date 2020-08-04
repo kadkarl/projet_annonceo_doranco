@@ -24,7 +24,7 @@ class Session
      * Get Session
      *
      * @param string $name
-     * @return void
+     * @return mixed
      */
     public static function get(string $name)
     {

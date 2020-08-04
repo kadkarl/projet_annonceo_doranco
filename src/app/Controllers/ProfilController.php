@@ -42,7 +42,7 @@ class ProfilController extends AbstractController
 
             if(ProfilModel::insert($profil))
             {
-                return self::redirectToRoute(SITE_URL."app/dashboard");
+                return self::redirectToRoute(SITE_URL."/app/dashboard");
             }
 
         }

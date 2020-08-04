@@ -46,7 +46,6 @@ class AnnonceController extends AbstractController
             {
                 self::redirectToRoute(SITE_URL."/app/dashboard");
             }
-
         }
 
         return self::render('annonce/create', [

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Entities\Profil;
+use phpDocumentor\Reflection\Types\Mixed_;
 
 /**
  * Profil Model
@@ -27,7 +28,7 @@ class ProfilModel extends \Sys\AbstractModel
      * @param integer $id_membre
      * @return Profil
      */
-    public static function getProfil(int $id_membre): Profil
+    public static function getProfil(int $id_membre)
     {
         return self::init()->query("select * from profil where id_membre = '$id_membre'")->fetchObject("App\Entities\Profil");
     }

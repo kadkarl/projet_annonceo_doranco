@@ -80,7 +80,7 @@ class MembreModel extends AbstractModel
      * Get Membre
      *
      * @param Membre $membre
-     * @return void
+     * @return mixed
      */
     public static function getMembre(Membre $membre)
     {
