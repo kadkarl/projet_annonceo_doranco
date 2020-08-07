@@ -1,5 +1,5 @@
 <?php
 require_once "../vendor/autoload.php";
 
-$constants = \Sys\Constants::init();
-$router = \Sys\Router::init();
+\Sys\Constants::init();
+\Sys\Router::init();
