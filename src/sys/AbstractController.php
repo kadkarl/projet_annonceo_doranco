@@ -5,7 +5,7 @@ namespace Sys;
 /**
  * Class Abstract Controller
  */
-class AbstractController
+abstract class AbstractController
 {
     /**
      * View Render
