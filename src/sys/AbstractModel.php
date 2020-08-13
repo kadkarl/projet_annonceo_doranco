@@ -10,7 +10,7 @@ use PDO;
  * @package Sys
  */
 
-class AbstractModel
+abstract class AbstractModel
 {
     /**
      * @var [string]
