@@ -26,18 +26,6 @@ class Annonce
     }
 
     /**
-     * Set the value of id_annonce
-     *
-     * @return  self
-     */ 
-    public function setId_annonce($id_annonce)
-    {
-        $this->id_annonce = $id_annonce;
-
-        return $this;
-    }
-
-    /**
      * Get the value of titre
      */ 
     public function getTitre()
