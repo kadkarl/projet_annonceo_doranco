@@ -153,26 +153,6 @@ class Membre
     }
 
     /**
-     * Get the value of civilite
-     */ 
-    public function getCivilite()
-    {
-        return $this->civilite;
-    }
-
-    /**
-     * Set the value of civilite
-     *
-     * @return  self
-     */ 
-    public function setCivilite($civilite)
-    {
-        $this->civilite = $civilite;
-
-        return $this;
-    }
-
-    /**
      * Get the value of status
      */ 
     public function getStatus()
