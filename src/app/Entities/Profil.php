@@ -5,11 +5,20 @@ namespace App\Entities;
 class Profil
 {
 
+    private $id_profil;
     private $nom;
     private $prenom;
     private $telephone;
     private $civilite;
     private $id_membre;
+    
+    /**
+     * Get the value of nom
+     */ 
+    public function getId_profil()
+    {
+        return $this->id_profil;
+    }
 
 
     /**
