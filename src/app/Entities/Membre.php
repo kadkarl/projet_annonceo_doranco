@@ -21,18 +21,6 @@ class Membre
     }
 
     /**
-     * Set the value of id_membre
-     *
-     * @return  self
-     */ 
-    public function setId_membre($id_membre)
-    {
-        $this->id_membre = $id_membre;
-
-        return $this;
-    }
-
-    /**
      * Get the value of pseudo
      */ 
     public function getPseudo()
