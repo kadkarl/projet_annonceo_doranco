@@ -18,18 +18,6 @@ class Categorie
     }
 
     /**
-     * Set the value of id_categorie
-     *
-     * @return  self
-     */ 
-    public function setId_categorie($id_categorie)
-    {
-        $this->id_categorie = $id_categorie;
-
-        return $this;
-    }
-
-    /**
      * Get the value of titre
      */ 
     public function getTitre()
