@@ -39,7 +39,7 @@ class MembreModel extends AbstractModel
      * Return Last Insert ID
      *
      * @param Membre $membre
-     * @return void
+     * @return integer
      */
     public static function insert(Membre $membre): int
     {
